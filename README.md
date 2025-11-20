@@ -18,7 +18,7 @@ javascript:(function () { var script = document.createElement('script'); script.
 9) View the response
 10) Find the first "card_refs"
 11) Look for the element with that ref (like in the image below)
-<img width="524" height="55" alt="image" src="https://github.com/user-attachments/assets/5d826581-022d-4c99-b092-9e174c6533e2" />
+<img width="524" height="55" alt="image" src="https://github.com/user-attachments/assets/5d826581-022d-4c99-b092-9e174c6533e2" /><br>
 12) Look at the content- that is your answer to the question
 
 **Computer/Laptop**
@@ -30,11 +30,11 @@ javascript:(function () { var script = document.createElement('script'); script.
 6) View the response
 7) Find the first "card_refs"
 8) Look for the element with that ref (like in the image below)
-<img width="524" height="55" alt="image" src="https://github.com/user-attachments/assets/5d826581-022d-4c99-b092-9e174c6533e2" />
+<img width="524" height="55" alt="image" src="https://github.com/user-attachments/assets/5d826581-022d-4c99-b092-9e174c6533e2" /><br>
 9) Look at the content- that is your answer to the question
 
-### PLEASE NOTE: This is only tested and is guaranteed to only work on multiple choice questions like the one below.
-<img width="623" height="468" alt="image" src="https://github.com/user-attachments/assets/800207bd-ef63-41e3-8f8e-eb7df46c0908" />
+### PLEASE NOTE: This is only tested and is guaranteed to only work on multiple choice questions like the one below.<br>
+<img width="623" height="468" alt="image" src="https://github.com/user-attachments/assets/800207bd-ef63-41e3-8f8e-eb7df46c0908" /><br>
 <img width="380" height="197" alt="image" src="https://github.com/user-attachments/assets/1525e7e5-f19f-4af0-8dbb-35d83f45513e" />
 
 ## HACK 2: Unblock Google Lens
