@@ -1,5 +1,8 @@
 # LearnWork
 
+> [!CAUTION]
+> **DISCLAIMER OF LIABILITY**: This information is provided for educational and informational purposes only. Attempting to bypass digital restrictions, security measures, or monitoring systems may violate school rules, platform terms of service, and applicable laws.
+
 ## HACK 1: Getting the answers from Sparx Maths
 There are two methods: Mobile and Computer/Laptop
 
