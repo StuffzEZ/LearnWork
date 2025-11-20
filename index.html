@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading...</title>
+
+    <style>
+        /* Block mobile devices */
+        @media (max-width: 768px) {
+            body { display: none !important; }
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle at 20% 20%, #0a1a33, #01060d);
+            color: white;
+            overflow: hidden;
+        }
+
+        .center-box {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background: transparent;
+        }
+
+        button {
+            padding: 18px 45px;
+            font-size: 26px;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 40px;
+            background: linear-gradient(90deg, #4f8bff, #68c3ff);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.45);
+            transition: 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        #topbar {
+            height: 60px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(12px);
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 30px;
+            font-size: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            color: white;
+        }
+
+        #frame-container {
+            width: 100%;
+            height: calc(100vh - 60px);
+            display: none;
+            margin-top: 60px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="start-screen" class="center-box">
+    <button onclick="startApp()">Start</button>
+</div>
+
+<div id="topbar">
+    <div style="font-weight:bold; font-size:22px;">LearnWork</div>
+    <div>Press K+L to close tab | Press O+P to disguise (you sometimes need to press one key then the other)</div>
+</div>
+
+<div id="frame-container">
+    <iframe id="mainframe"
+        src="https://webfuse.com/+iframetest/?url=https%3A%2F%2Flens.google.com">
+    </iframe>
+</div>
+
+<script>
+    /* --- RANDOM TITLES (EXPANDED) --- */
+    const dummyTitles = [
+        "Advanced Algebra Learning Suite",
+        "Homework Analytics Dashboard",
+        "Integrated Study Panel",
+        "Cognitive Learning Workspace",
+        "Mathematics & Logic Revision Portal",
+        "EduCore System Interface",
+        "Curriculum Navigator",
+        "Scholarly Resources Hub",
+        "STEM Development Framework",
+        "Academics Productivity Console",
+        "Algebra II Deep Guide",
+        "Scientific Concepts Learning Center",
+        "General Knowledge Mastery Board",
+        "Mathematics Simulation Toolkit",
+        "Learning Enhancement Shell",
+        "Student Performance Portal",
+        "Advanced Study Control Room",
+        "Geometry Foundations Reference",
+        "Physics Theory Workbook",
+        "Biology Concept Matrix",
+        "Statistical Analysis Primer",
+        "Historical Studies Overview"
+    ];
+
+    document.title = dummyTitles[Math.floor(Math.random() * dummyTitles.length)];
+
+    /* --- HIGHLY DETAILED FAKE STUDY PAGES --- */
+    const dummyPages = [
+        `<h1>Algebraic Structures — Complete Study Guide</h1>
+         <p>Algebraic structures—such as groups, rings, and fields—form the foundation
+         of many advanced mathematical systems including cryptography and abstract algebra.</p>
+         <h2>Groups</h2>
+         <p>A group is defined as a set paired with a binary operation that satisfies 
+         closure, associativity, identity, and invertibility.</p>
+         <h2>Applications</h2>
+         <ul>
+            <li>Public-key cryptography</li>
+            <li>Error-correcting codes</li>
+            <li>Modular arithmetic systems</li>
+         </ul>`,
+
+        `<h1>Fraction Operations — Mastery Level Reference</h1>
+         <p>Fractions are proportional representations used throughout arithmetic,
+         algebra, and applied sciences.</p>
+         <h2>Core Operations</h2>
+         <p>Addition requires a common denominator; multiplication simply multiplies
+         numerators and denominators.</p>
+         <h2>Examples</h2>
+         <p>1/4 + 3/8 = 5/8</p>`,
+
+        `<h1>Evidence-Based Study Methods</h1>
+         <p>Three scientifically validated study techniques dramatically improve long-term memory retention.</p>
+         <h2>1. Active Recall</h2>
+         <p>Retrieving information strengthens neural pathways.</p>
+         <h2>2. Spaced Repetition</h2>
+         <p>Review intervals spaced over days or weeks improve consolidation.</p>
+         <h2>3. Interleaving</h2>
+         <p>Switching between topics improves adaptability and comprehension.</p>`,
+
+        `<h1>World Geography — Core Concepts</h1>
+         <p>An overview of continents, oceans, climate zones, and physical landforms.</p>
+         <h2>Climate Zones</h2>
+         <p>Tropical, temperate, polar, arid, and Mediterranean.</p>`,
+
+        `<h1>Early Civilizations — Comprehensive Notes</h1>
+         <p>Early societies formed the basis of writing systems, agriculture,
+         architectural engineering, and early governance.</p>
+         <h2>Egypt</h2>
+         <p>Contributions include hieroglyphics, pyramids, and advanced mathematics.</p>`,
+
+        `<h1>Algebra Problem Solving — Step-by-Step Module</h1>
+         <p>This module explains isolating variables, balancing equations, substitution,
+         and factorization.</p>
+         <h2>Example Problem</h2>
+         <p>Solve 2x + 7 = 19 → x = 6</p>`,
+
+        `<h1>Scientific Method — Framework Overview</h1>
+         <p>The scientific method is a systematic process involving observation,
+         hypothesis, experimentation, and conclusion.</p>`
+    ];
+
+    function startApp() {
+        document.getElementById('start-screen').style.display = 'none';
+        document.getElementById('topbar').style.display = 'flex';
+        document.getElementById('frame-container').style.display = 'block';
+    }
+
+    /* --- KEY COMBINATIONS --- */
+    let klPressed = { k: false, l: false };
+    let opPressed = { o: false, p: false };
+
+    document.addEventListener('keydown', (e) => {
+        const key = e.key.toLowerCase();
+
+        if (key === 'k') klPressed.k = true;
+        if (key === 'l') klPressed.l = true;
+        if (klPressed.k && klPressed.l) window.close();
+
+        if (key === 'o') opPressed.o = true;
+        if (key === 'p') opPressed.p = true;
+        if (opPressed.o && opPressed.p) activateDisguise();
+    });
+
+    document.addEventListener('keyup', (e) => {
+        const key = e.key.toLowerCase();
+        if (key === 'k' || key === 'l') klPressed = { k: false, l: false };
+        if (key === 'o' || key === 'p') opPressed = { o: false, p: false };
+    });
+
+    function activateDisguise() {
+        const dummy = dummyPages[Math.floor(Math.random() * dummyPages.length)];
+        document.body.innerHTML = `
+            <div style="padding:40px; font-family:Arial; max-width:900px;">
+                ${dummy}
+            </div>`;
+        document.title = dummyTitles[Math.floor(Math.random() * dummyTitles.length)];
+    }
+</script>
+
+</body>
+</html>
